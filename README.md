@@ -243,7 +243,7 @@ This project is licensed under the **MIT License** – see the [LICENSE.txt](LIC
 
 Don't let hidden bottlenecks slow down your workflow. Vitals gives you a complete view of your system's health—real-time stats, historical insights, and exportable reports—so you can optimize performance and stay in control.
 
-**[⬇️ Download Now](https://github.com/AnkeshGG/VitalsSystemMonitor/releases)** | **[📖 Quick Start Guide](#-quick-start-guide)** | **[🤝 Contribute](#-contributing)**
+**[⬇️ Download Now](https://github.com/AnkeshGG/VitalsSystemMonitor/releases)** | **[📖 Quick Start Guide](#-quick-start)** | **[🤝 Contribute](#-contributing)**
 
 ---
 © 2025 Ankesh Kumar.
