@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane minHeight="600.0" minWidth="800.0" prefHeight="700.0" prefWidth="1000.0" styleClass="root" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vitals.controllers.DashboardController">
+
+    <!-- Top Header with Application Name and View History Button -->
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" styleClass="header" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+            <Label styleClass="app-title" text="Vitals - System Monitor Dashboard">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+            </Label>
+
+            <!-- Spacer to push button to the right -->
+            <Region HBox.hgrow="ALWAYS" />
+
+            <!-- View History Button -->
+            <Button fx:id="viewHistoryButton" onAction="#handleViewHistory" styleClass="header-button" text="View History">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Button>
+        </HBox>
+    </top>
+
+    <!-- Main Content Area with ScrollPane -->
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" styleClass="main-scroll-pane" BorderPane.alignment="CENTER">
+            <AnchorPane styleClass="main-content">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+
+                <!-- Main Grid Layout for Dashboard Cards -->
+                <GridPane hgap="20.0" vgap="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="380.0" percentWidth="50.0" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="380.0" percentWidth="50.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="300.0" percentHeight="50.0" vgrow="ALWAYS" />
+                        <RowConstraints minHeight="300.0" percentHeight="50.0" vgrow="ALWAYS" />
+                    </rowConstraints>
+
+                    <!-- CPU Usage Card -->
+                    <AnchorPane styleClass="dashboard-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <padding>
+                            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                        </padding>
+
+                        <VBox spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <Label styleClass="card-title" text="CPU Usage" VBox.vgrow="NEVER">
+                                <font>
+                                    <Font name="System Bold" size="16.0" />
+                                </font>
+                            </Label>
+
+                            <!-- CPU Usage Chart -->
+                            <LineChart fx:id="cpuChart" animated="false" createSymbols="false" legendVisible="false" prefHeight="180.0" VBox.vgrow="ALWAYS">
+                                <xAxis>
+                                    <CategoryAxis side="BOTTOM" tickLabelsVisible="false" tickMarkVisible="false" />
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis side="LEFT"/>
+                                </yAxis>
+                            </LineChart>
+
+                            <!-- CPU Stats -->
+                            <HBox alignment="CENTER" spacing="15.0" VBox.vgrow="NEVER">
+                                <Label styleClass="stat-label" text="Current Usage:">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="cpuPercentageLabel" styleClass="stat-value" text="0%">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                            </HBox>
+                        </VBox>
+                    </AnchorPane>
+
+                    <!-- Memory Usage Card -->
+                    <AnchorPane styleClass="dashboard-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <padding>
+                            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                        </padding>
+
+                        <VBox spacing="12.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <Label styleClass="card-title" text="Memory Usage" VBox.vgrow="NEVER">
+                                <font>
+                                    <Font name="System Bold" size="16.0" />
+                                </font>
+                            </Label>
+
+                            <!-- Memory Circular Progress -->
+                            <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+                                <StackPane prefHeight="120.0" prefWidth="120.0">
+                                    <Circle fx:id="memoryBackgroundCircle" radius="50.0" styleClass="circle-background" />
+                                    <Circle fx:id="memoryProgressCircle" radius="50.0" styleClass="circle-progress" />
+                                    <VBox alignment="CENTER" spacing="2.0">
+                                        <Label fx:id="memoryUsedLabel" styleClass="circle-main-text" text="0 GB">
+                                            <font>
+                                                <Font name="System Bold" size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="memoryPercentageLabel" styleClass="circle-percentage-text" text="0%">
+                                            <font>
+                                                <Font size="11.0" />
+                                            </font>
+                                        </Label>
+                                    </VBox>
+                                </StackPane>
+                            </HBox>
+
+                            <!-- Memory Stats -->
+                            <HBox alignment="CENTER" spacing="15.0" VBox.vgrow="NEVER">
+                                <VBox alignment="CENTER" spacing="3.0">
+                                    <Label styleClass="stat-label" text="Used:">
+                                        <font>
+                                            <Font size="11.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="memoryUsedStatLabel" styleClass="stat-value-small" text="0 GB">
+                                        <font>
+                                            <Font name="System Bold" size="12.0" />
+                                        </font>
+                                    </Label>
+                                </VBox>
+                                <VBox alignment="CENTER" spacing="3.0">
+                                    <Label styleClass="stat-label" text="Available:">
+                                        <font>
+                                            <Font size="11.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="memoryAvailableLabel" styleClass="stat-value-small" text="0 GB">
+                                        <font>
+                                            <Font name="System Bold" size="12.0" />
+                                        </font>
+                                    </Label>
+                                </VBox>
+                                <VBox alignment="CENTER" spacing="3.0">
+                                    <Label styleClass="stat-label" text="Total:">
+                                        <font>
+                                            <Font size="11.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="memoryTotalLabel" styleClass="stat-value-small" text="0 GB">
+                                        <font>
+                                            <Font name="System Bold" size="12.0" />
+                                        </font>
+                                    </Label>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+                    </AnchorPane>
+
+                    <!-- Disk Usage Card -->
+                    <AnchorPane styleClass="dashboard-card" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <padding>
+                            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                        </padding>
+
+                        <VBox spacing="12.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <Label styleClass="card-title" text="Disk Usage" VBox.vgrow="NEVER">
+                                <font>
+                                    <Font name="System Bold" size="16.0" />
+                                </font>
+                            </Label>
+
+                            <VBox spacing="12.0" VBox.vgrow="ALWAYS">
+
+                                <StackPane prefHeight="120.0" VBox.vgrow="ALWAYS">
+                                    <VBox alignment="CENTER" prefHeight="29.0" prefWidth="432.0" spacing="5.0">
+                                        <Label styleClass="disk-info-label" text="Total System Storage">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <ProgressBar fx:id="totalDiskProgressBar" maxWidth="Infinity" prefHeight="20.0" prefWidth="432.0" styleClass="disk-progress-main" />
+                                    </VBox>
+                                </StackPane>
+
+                                <HBox alignment="CENTER" spacing="15.0">
+                                    <VBox alignment="CENTER" spacing="3.0">
+                                        <Label styleClass="stat-label" text="Used:">
+                                            <font>
+                                                <Font size="11.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="diskUsedLabel" styleClass="stat-value-small" text="0 GB">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </VBox>
+                                    <VBox alignment="CENTER" spacing="3.0">
+                                        <Label styleClass="stat-label" text="Available:">
+                                            <font>
+                                                <Font size="11.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="diskAvailableLabel" styleClass="stat-value-small" text="0 GB">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </VBox>
+                                    <VBox alignment="CENTER" spacing="3.0">
+                                        <Label styleClass="stat-label" text="Total:">
+                                            <font>
+                                                <Font size="11.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="diskTotalLabel" styleClass="stat-value-small" text="0 GB">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </VBox>
+                                </HBox>
+                            </VBox>
+                        </VBox>
+                    </AnchorPane>
+
+                    <!-- Network Usage Card -->
+                    <AnchorPane styleClass="dashboard-card" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <padding>
+                            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                        </padding>
+
+                        <VBox spacing="12.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <Label styleClass="card-title" text="Network Usage" VBox.vgrow="NEVER">
+                                <font>
+                                    <Font name="System Bold" size="16.0" />
+                                </font>
+                            </Label>
+
+                            <!-- Network Speed Display -->
+                            <HBox alignment="CENTER" spacing="30.0" VBox.vgrow="NEVER">
+                                <VBox alignment="CENTER" spacing="3.0">
+                                    <Label styleClass="network-label" text="Upload">
+                                        <font>
+                                            <Font size="11.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="uploadSpeedLabel" styleClass="network-speed" text="0 Kbps">
+                                        <font>
+                                            <Font name="System Bold" size="14.0" />
+                                        </font>
+                                    </Label>
+                                </VBox>
+                                <VBox alignment="CENTER" spacing="3.0">
+                                    <Label styleClass="network-label" text="Download">
+                                        <font>
+                                            <Font size="11.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="downloadSpeedLabel" styleClass="network-speed-large" text="0 Mbps">
+                                        <font>
+                                            <Font name="System Bold" size="16.0" />
+                                        </font>
+                                    </Label>
+                                </VBox>
+                            </HBox>
+
+                            <!-- Network Chart -->
+                            <LineChart fx:id="networkChart" animated="false" createSymbols="false" legendVisible="false" prefHeight="120.0" VBox.vgrow="ALWAYS">
+                                <xAxis>
+                                    <CategoryAxis side="BOTTOM" tickLabelsVisible="false" tickMarkVisible="false" />
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis side="LEFT"/>
+                                </yAxis>
+                            </LineChart>
+
+                            <!-- Network Legend -->
+                            <HBox alignment="CENTER" spacing="20.0" VBox.vgrow="NEVER">
+                                <HBox alignment="CENTER_LEFT" spacing="6.0">
+                                    <Circle radius="3.0" styleClass="upload-indicator" />
+                                    <Label styleClass="legend-text" text="Upload">
+                                        <font>
+                                            <Font size="11.0" />
+                                        </font>
+                                    </Label>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" spacing="6.0">
+                                    <Circle radius="3.0" styleClass="download-indicator" />
+                                    <Label styleClass="legend-text" text="Download">
+                                        <font>
+                                            <Font size="11.0" />
+                                        </font>
+                                    </Label>
+                                </HBox>
+                            </HBox>
+                        </VBox>
+                    </AnchorPane>
+
+                </GridPane>
+            </AnchorPane>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

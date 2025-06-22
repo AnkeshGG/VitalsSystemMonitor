@@ -1,0 +1,397 @@
+/* Modern Dark Theme for System Monitor Dashboard */
+
+.root {
+    -fx-background-color: #1a1a1a;
+    -fx-font-family: "Segoe UI", "SF Pro Display", Arial, sans-serif;
+    -fx-text-fill: #ffffff;
+}
+
+/* Header HBox with Deep Blue Gradient */
+.header {
+    -fx-background-color: linear-gradient(to bottom right, #1e3c72 0%, #2a5298 25%, #3b82f6 50%, #1e40af 75%, #1e3a8a 100%);
+    -fx-background-radius: 0 0 12 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(30, 58, 114, 0.8), 20, 0, 0, 4);
+    -fx-padding: 20;
+    -fx-border-color: rgba(59, 130, 246, 0.3);
+    -fx-border-width: 0 0 2 0;
+}
+
+.app-title {
+    -fx-font-size: 28;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.8), 3, 0, 1, 2);
+}
+
+/* Header Button Styling */
+.header-button {
+    -fx-background-color: linear-gradient(to bottom right, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20 10 20;
+    -fx-min-width: 120;
+    -fx-pref-height: 38;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(one-pass-box, rgba(0, 0, 0, 0.3), 4, 0, 0, 2);
+}
+
+.header-button:hover {
+    -fx-background-color: linear-gradient(to bottom right, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
+    -fx-border-color: rgba(255, 255, 255, 0.5);
+    -fx-effect: dropshadow(one-pass-box, rgba(0, 0, 0, 0.4), 6, 0, 0, 3);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.header-button:pressed {
+    -fx-background-color: linear-gradient(to bottom right, rgba(30, 60, 114, 0.8) 0%, rgba(30, 64, 175, 0.6) 100%);
+    -fx-border-color: rgba(59, 130, 246, 0.8);
+    -fx-effect: dropshadow(one-pass-box, rgba(30, 58, 114, 0.6), 2, 0, 0, 1);
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.header-button:focused {
+    -fx-border-color: rgba(59, 130, 246, 0.8);
+    -fx-border-width: 2;
+}
+
+/* Main ScrollPane Styling */
+.main-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: #1a1a1a;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.main-scroll-pane > .viewport {
+    -fx-background-color: #1a1a1a;
+}
+
+.main-scroll-pane > .corner {
+    -fx-background-color: #1a1a1a;
+}
+
+/* Main Content Area */
+.main-content {
+    -fx-background-color: #1a1a1a;
+}
+
+/* Custom ScrollBar Styling - Elegant Dark Theme */
+.scroll-bar {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar:vertical {
+    -fx-pref-width: 14;
+    -fx-background-color: rgba(42, 42, 42, 0.4);
+    -fx-background-radius: 7;
+}
+
+.scroll-bar:horizontal {
+    -fx-pref-height: 14;
+    -fx-background-color: rgba(42, 42, 42, 0.4);
+    -fx-background-radius: 7;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #404040;
+    -fx-background-radius: 7;
+    -fx-border-color: rgba(96, 96, 96, 0.3);
+    -fx-border-width: 1;
+    -fx-border-radius: 7;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #505050;
+}
+
+.scroll-bar .thumb:pressed {
+    -fx-background-color: #606060;
+}
+
+.scroll-bar .track {
+    -fx-background-color: rgba(31, 31, 31, 0.6);
+    -fx-background-radius: 7;
+    -fx-border-color: rgba(64, 64, 64, 0.2);
+    -fx-border-width: 1;
+    -fx-border-radius: 7;
+}
+
+.scroll-bar .track-background {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+    -fx-pref-width: 0;
+    -fx-pref-height: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-shape: null;
+}
+
+/* Dashboard Card Styling */
+.dashboard-card {
+    -fx-background-color: linear-gradient(to bottom right, #2a2a2a 0%, #1f1f1f 100%);
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 12, 0, 0, 4);
+    -fx-border-color: rgba(255,255,255,0.1);
+    -fx-border-width: 1;
+    -fx-border-radius: 16;
+}
+
+.card-title {
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+/* Statistics Labels */
+.stat-label {
+    -fx-font-size: 12;
+    -fx-text-fill: #a0a0a0;
+    -fx-font-weight: normal;
+}
+
+.stat-value {
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.stat-value-small {
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+/* Chart Styling */
+.chart {
+    -fx-background-color: transparent;
+    -fx-legend-visible: false;
+}
+
+.chart-plot-background {
+    -fx-background-color: rgba(255,255,255,0.02);
+    -fx-background-radius: 8;
+}
+
+.chart-content {
+    -fx-padding: 5;
+}
+
+.chart-vertical-grid-lines,
+.chart-horizontal-grid-lines {
+    -fx-stroke: rgba(255,255,255,0.1);
+    -fx-stroke-width: 0.5;
+}
+
+.axis {
+    -fx-tick-label-fill: #a0a0a0;
+    -fx-tick-mark-visible: true;
+    -fx-minor-tick-visible: false;
+    -fx-tick-length: 5;
+}
+
+.axis-tick-mark {
+    -fx-stroke: rgba(255,255,255,0.3);
+}
+
+/* CPU Chart Line with Deep Blue Theme */
+.chart-series-line {
+    -fx-stroke: linear-gradient(to right, #3b82f6 0%, #1e40af 100%);
+    -fx-stroke-width: 3;
+}
+
+.chart-line-symbol {
+    -fx-background-color: #3b82f6;
+}
+
+/* Memory Circle Progress with Deep Blue Theme */
+.circle-background {
+    -fx-fill: transparent;
+    -fx-stroke: rgba(255,255,255,0.1);
+    -fx-stroke-width: 8;
+}
+
+.circle-progress {
+    -fx-fill: transparent;
+    -fx-stroke: linear-gradient(from 0% 0% to 100% 100%, #1e3c72 0%, #2a5298 50%, #3b82f6 100%);
+    -fx-stroke-width: 8;
+    -fx-stroke-dash-array: 377; /* 2 * π * 60 */
+    -fx-stroke-line-cap: round;
+    -fx-effect: dropshadow(one-pass-box, rgba(59, 130, 246, 0.8), 10, 0, 0, 0);
+}
+
+.circle-main-text {
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.circle-percentage-text {
+    -fx-font-size: 12;
+    -fx-text-fill: #a0a0a0;
+}
+
+.circle-unit-text {
+    -fx-font-size: 14;
+    -fx-text-fill: #a0a0a0;
+}
+
+/* Disk Usage Styling with Deep Blue Theme */
+.disk-info-label {
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+    -fx-text-fill: #c0c0c0;
+}
+
+.drive-label {
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: rgba(59, 130, 246, 0.2);
+    -fx-background-radius: 4;
+    -fx-padding: 2 6 2 6;
+    -fx-border-color: rgba(59, 130, 246, 0.4);
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+}
+
+/* Main Disk Progress Bar with Deep Blue Theme */
+.disk-progress-main {
+    -fx-accent: linear-gradient(to right, #1e3c72 0%, #3b82f6 100%);
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-background-radius: 10;
+}
+
+.disk-progress-main > .bar {
+    -fx-background-color: linear-gradient(to right, #1e3c72 0%, #2a5298 50%, #3b82f6 100%);
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-effect: dropshadow(one-pass-box, rgba(59, 130, 246, 0.6), 6, 0, 0, 0);
+}
+
+.disk-progress-main > .track {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+}
+
+/* Individual Drive Progress Bars */
+.disk-progress {
+    -fx-accent: #3b82f6;
+}
+
+.disk-progress > .bar {
+    -fx-background-color: linear-gradient(to right, #2563eb 0%, #3b82f6 100%);
+    -fx-background-radius: 4;
+    -fx-background-insets: 0;
+}
+
+.disk-progress > .track {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-background-radius: 4;
+    -fx-background-insets: 0;
+}
+
+.disk-value {
+    -fx-font-size: 11;
+    -fx-font-weight: normal;
+    -fx-text-fill: #c0c0c0;
+}
+
+/* Network Usage Styling with Deep Blue Theme */
+.network-label {
+    -fx-font-size: 12;
+    -fx-text-fill: #a0a0a0;
+    -fx-font-weight: normal;
+}
+
+.network-speed {
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3b82f6;
+    -fx-effect: dropshadow(one-pass-box, rgba(59, 130, 246, 0.4), 3, 0, 0, 0);
+}
+
+.network-speed-large {
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4e84b9;
+    -fx-effect: dropshadow(one-pass-box, rgba(45, 73, 129, 0.8), 4, 0, 0, 0);
+}
+
+/* Network Chart Indicators with Deep Blue Theme */
+.upload-indicator {
+    -fx-fill: #3b82f6;
+    -fx-effect: dropshadow(one-pass-box, rgba(59, 130, 246, 0.8), 6, 0, 0, 0);
+}
+
+.download-indicator {
+    -fx-fill: #4e84b9;
+    -fx-effect: dropshadow(one-pass-box, rgba(45, 73, 129, 0.8), 6, 0, 0, 0);
+}
+
+.legend-text {
+    -fx-font-size: 12;
+    -fx-text-fill: #a0a0a0;
+}
+
+/* Network Chart Series Colors */
+.default-color0.chart-series-line {
+    -fx-stroke: #4facfe;
+    -fx-stroke-width: 2.5;
+    -fx-effect: dropshadow(one-pass-box, rgba(79, 172, 254, 0.4), 3, 0, 0, 0);
+}
+
+.default-color1.chart-series-line {
+    -fx-stroke: #667eea;
+    -fx-stroke-width: 2.5;
+    -fx-effect: dropshadow(one-pass-box, rgba(102, 126, 234, 0.4), 3, 0, 0, 0);
+}
+
+/* Generic Progress Bar Styling */
+.progress-bar > .bar {
+    -fx-background-color: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    -fx-background-radius: 6;
+    -fx-effect: dropshadow(one-pass-box, rgba(79, 172, 254, 0.3), 2, 0, 0, 0);
+}
+
+.progress-bar > .track {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-background-radius: 6;
+}
+
+/* Hover Effects for Cards */
+.dashboard-card:hover {
+    -fx-background-color: linear-gradient(to bottom right, #2f2f2f 0%, #242424 100%);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 15, 0, 0, 5);
+    -fx-border-color: rgba(255,255,255,0.15);
+}
+
+/* Animation Support */
+.dashboard-card {
+    -fx-cursor: hand;
+}
+
+/* Additional BorderPane specific styling */
+.border-pane {
+    -fx-background-color: #1a1a1a;
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vitals.controllers.HistoricalController">
+    <top>
+        <VBox spacing="15">
+            <HBox alignment="CENTER_LEFT" styleClass="header" spacing="20">
+                <Label text="Historical System Metrics" styleClass="app-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <MenuButton fx:id="exportMenuButton" text="Export" styleClass="export-button">
+                    <items>
+                        <MenuItem fx:id="exportPdfMenuItem" text="Export as PDF"/>
+                        <MenuItem fx:id="exportCsvMenuItem" text="Export as CSV"/>
+                    </items>
+                </MenuButton>
+            </HBox>
+            <HBox alignment="CENTER" spacing="10" style="-fx-padding: 0 20 10 20;">
+                <Label text="Time Period:" style="-fx-text-fill: #c0c0c0; -fx-font-size: 14; -fx-font-weight: bold;"/>
+                <ComboBox fx:id="timePeriodComboBox" prefWidth="120"
+                          style="-fx-background-color: #2a2a2a; -fx-border-color: rgba(255,255,255,0.2); -fx-border-radius: 6; -fx-background-radius: 6;"/>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="30" alignment="CENTER" styleClass="content-area">
+            <VBox styleClass="chart-container" spacing="10">
+                <LineChart fx:id="cpuHistoryChart" title="CPU Usage" prefHeight="350" prefWidth="700" animated="true">
+                    <xAxis>
+                        <CategoryAxis label="Time" tickLabelRotation="45"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="CPU Usage (%)" autoRanging="false" lowerBound="0" upperBound="100" tickUnit="10"/>
+                    </yAxis>
+                </LineChart>
+            </VBox>
+            <VBox styleClass="chart-container" spacing="10">
+                <LineChart fx:id="memoryHistoryChart" title="Memory Usage" prefHeight="350" prefWidth="700" animated="true">
+                    <xAxis>
+                        <CategoryAxis label="Time" tickLabelRotation="45"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Used Memory (GB)" autoRanging="true"/>
+                    </yAxis>
+                </LineChart>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

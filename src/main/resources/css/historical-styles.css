@@ -1,0 +1,443 @@
+/* Historical View Styles - Matching Main Dashboard Theme */
+
+.root {
+    -fx-background-color: #1a1a1a;
+    -fx-font-family: "Segoe UI", "SF Pro Display", Arial, sans-serif;
+    -fx-text-fill: #ffffff;
+}
+
+/* Header styling to match main dashboard */
+.header {
+    -fx-background-color: linear-gradient(to bottom right, #1e3c72 0%, #2a5298 25%, #3b82f6 50%, #1e40af 75%, #1e3a8a 100%);
+    -fx-background-radius: 0 0 12 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(30, 58, 114, 0.8), 20, 0, 0, 4);
+    -fx-padding: 20;
+    -fx-border-color: rgba(59, 130, 246, 0.3);
+    -fx-border-width: 0 0 2 0;
+}
+
+/* Export MenuButton styling to match main dashboard button */
+.export-button {
+    -fx-background-color: linear-gradient(to bottom right, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-text-fill: #ffffff !important;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20 10 20;
+    -fx-min-width: 120;
+    -fx-pref-height: 38;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(one-pass-box, rgba(0, 0, 0, 0.3), 4, 0, 0, 2);
+}
+
+/* Additional specific selector for MenuButton text */
+.export-button .label {
+    -fx-text-fill: #ffffff !important;
+}
+
+.export-button:hover {
+    -fx-background-color: linear-gradient(to bottom right, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
+    -fx-border-color: rgba(255, 255, 255, 0.5);
+    -fx-effect: dropshadow(one-pass-box, rgba(0, 0, 0, 0.4), 6, 0, 0, 3);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.export-button:pressed {
+    -fx-background-color: linear-gradient(to bottom right, rgba(30, 60, 114, 0.8) 0%, rgba(30, 64, 175, 0.6) 100%);
+    -fx-border-color: rgba(59, 130, 246, 0.8);
+    -fx-effect: dropshadow(one-pass-box, rgba(30, 58, 114, 0.6), 2, 0, 0, 1);
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.export-button:focused {
+    -fx-border-color: rgba(59, 130, 246, 0.8);
+    -fx-border-width: 2;
+}
+
+.export-button .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0 5 0 0;
+}
+
+.export-button .arrow {
+    -fx-background-color: #ffffff;
+    -fx-shape: "M 0 0 L 4 4 L 8 0 Z";
+    -fx-scale-shape: true;
+    -fx-padding: 3;
+}
+
+/* Context menu styling for export dropdown */
+.context-menu {
+    -fx-background-color: linear-gradient(to bottom, #2a2a2a 0%, #1f1f1f 100%);
+    -fx-border-color: rgba(255,255,255,0.2);
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 12, 0, 0, 4);
+    -fx-padding: 5;
+}
+
+.menu-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 13;
+    -fx-font-weight: normal;
+    -fx-padding: 8 16 8 16;
+    -fx-background-radius: 4;
+}
+
+.menu-item:hover {
+    -fx-background-color: rgba(59, 130, 246, 0.2);
+    -fx-text-fill: #ffffff;
+}
+
+.menu-item:focused {
+    -fx-background-color: rgba(59, 130, 246, 0.3);
+    -fx-text-fill: #ffffff;
+}
+
+.app-title {
+    -fx-font-size: 28;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.8), 3, 0, 1, 2);
+}
+
+/* ComboBox styling */
+.combo-box {
+    -fx-background-color: linear-gradient(to bottom, #2a2a2a 0%, #1f1f1f 100%);
+    -fx-border-color: rgba(255,255,255,0.2);
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.3), 3, 0, 0, 1);
+}
+
+.combo-box:hover {
+    -fx-border-color: rgba(59, 130, 246, 0.4);
+    -fx-background-color: linear-gradient(to bottom, #2f2f2f 0%, #242424 100%);
+}
+
+.combo-box:focused {
+    -fx-border-color: #3b82f6;
+    -fx-effect: dropshadow(one-pass-box, rgba(59, 130, 246, 0.5), 5, 0, 0, 0);
+}
+
+.combo-box .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+    -fx-padding: 6 12 6 12;
+}
+
+.combo-box .list-cell:filled:hover {
+    -fx-background-color: rgba(59, 130, 246, 0.2);
+}
+
+.combo-box .list-cell:filled:selected {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: #ffffff;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #c0c0c0;
+    -fx-shape: "M 0 0 L 4 4 L 8 0 Z";
+    -fx-scale-shape: true;
+    -fx-padding: 3;
+}
+
+.combo-box:hover .arrow {
+    -fx-background-color: #3b82f6;
+}
+
+/* ComboBox popup styling */
+.combo-box-popup .list-view {
+    -fx-background-color: #2a2a2a;
+    -fx-border-color: rgba(255,255,255,0.2);
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 10, 0, 0, 3);
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 13;
+    -fx-padding: 8 12 8 12;
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: rgba(59, 130, 246, 0.2);
+}
+
+.combo-box-popup .list-view .list-cell:selected {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: #ffffff;
+}
+
+/* Chart container styling */
+.chart-container {
+    -fx-background-color: linear-gradient(to bottom right, #2a2a2a 0%, #1f1f1f 100%);
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 12, 0, 0, 4);
+    -fx-border-color: rgba(255,255,255,0.1);
+    -fx-border-width: 1;
+    -fx-border-radius: 16;
+    -fx-padding: 20;
+}
+
+/* LineChart styling */
+.chart {
+    -fx-background-color: transparent;
+    -fx-legend-visible: true;
+    -fx-legend-side: bottom;
+    -fx-title-side: top;
+}
+
+.chart-title {
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.chart-content {
+    -fx-padding: 10;
+}
+
+.chart-plot-background {
+    -fx-background-color: rgba(255,255,255,0.02);
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(255,255,255,0.05);
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+}
+
+/* Grid lines */
+.chart-vertical-grid-lines,
+.chart-horizontal-grid-lines {
+    -fx-stroke: rgba(255,255,255,0.1);
+    -fx-stroke-width: 0.8;
+    -fx-stroke-dash-array: 5 5;
+}
+
+.chart-alternative-row-fill {
+    -fx-fill: rgba(255,255,255,0.01);
+}
+
+.chart-alternative-column-fill {
+    -fx-fill: rgba(255,255,255,0.01);
+}
+
+/* Axis styling */
+.axis {
+    -fx-tick-label-fill: #a0a0a0;
+    -fx-tick-mark-visible: true;
+    -fx-minor-tick-visible: false;
+    -fx-tick-length: 6;
+    -fx-font-size: 11;
+}
+
+.axis-tick-mark {
+    -fx-stroke: rgba(255,255,255,0.3);
+    -fx-stroke-width: 1;
+}
+
+.axis-minor-tick-mark {
+    -fx-stroke: rgba(255,255,255,0.15);
+    -fx-stroke-width: 0.5;
+}
+
+.axis:top .axis-label,
+.axis:bottom .axis-label {
+    -fx-text-fill: #c0c0c0;
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+}
+
+.axis:left .axis-label,
+.axis:right .axis-label {
+    -fx-text-fill: #c0c0c0;
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+}
+
+/* CPU Chart Line - Blue theme to match main dashboard */
+.default-color0.chart-series-line {
+    -fx-stroke: linear-gradient(to right, #3b82f6 0%, #1e40af 100%);
+    -fx-stroke-width: 3;
+    -fx-effect: dropshadow(one-pass-box, rgba(59, 130, 246, 0.6), 4, 0, 0, 0);
+}
+
+.default-color0.chart-line-symbol {
+    -fx-background-color: #3b82f6;
+    -fx-background-radius: 4px;
+    -fx-padding: 4px;
+    -fx-effect: dropshadow(one-pass-box, rgba(59, 130, 246, 0.8), 3, 0, 0, 0);
+}
+
+.default-color0.chart-series-area-line {
+    -fx-stroke: #3b82f6;
+    -fx-stroke-width: 3;
+}
+
+.default-color0.chart-series-area-fill {
+    -fx-fill: linear-gradient(to bottom, rgba(59, 130, 246, 0.3) 0%, rgba(59, 130, 246, 0.05) 100%);
+}
+
+/* Memory Chart Line - Complementary blue gradient */
+.default-color1.chart-series-line {
+    -fx-stroke: linear-gradient(to right, #1e3c72 0%, #2a5298 100%);
+    -fx-stroke-width: 3;
+    -fx-effect: dropshadow(one-pass-box, rgba(30, 60, 114, 0.6), 4, 0, 0, 0);
+}
+
+.default-color1.chart-line-symbol {
+    -fx-background-color: #1e3c72;
+    -fx-background-radius: 4px;
+    -fx-padding: 4px;
+    -fx-effect: dropshadow(one-pass-box, rgba(30, 60, 114, 0.8), 3, 0, 0, 0);
+}
+
+.default-color1.chart-series-area-line {
+    -fx-stroke: #1e3c72;
+    -fx-stroke-width: 3;
+}
+
+.default-color1.chart-series-area-fill {
+    -fx-fill: linear-gradient(to bottom, rgba(30, 60, 114, 0.3) 0%, rgba(30, 60, 114, 0.05) 100%);
+}
+
+/* Legend styling */
+.chart-legend {
+    -fx-background-color: rgba(42, 42, 42, 0.8);
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(255,255,255,0.1);
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-padding: 10;
+}
+
+.chart-legend-item {
+    -fx-text-fill: #c0c0c0;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+}
+
+.chart-legend-item-symbol {
+    -fx-background-radius: 4;
+    -fx-padding: 4;
+}
+
+/* Main content area */
+.content-area {
+    -fx-background-color: #1a1a1a;
+    -fx-padding: 20;
+}
+
+/* ScrollPane styling (if needed) */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: #1a1a1a;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: #1a1a1a;
+}
+
+.scroll-pane > .corner {
+    -fx-background-color: #1a1a1a;
+}
+
+/* Custom ScrollBar Styling */
+.scroll-bar {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar:vertical {
+    -fx-pref-width: 14;
+    -fx-background-color: rgba(42, 42, 42, 0.4);
+    -fx-background-radius: 7;
+}
+
+.scroll-bar:horizontal {
+    -fx-pref-height: 14;
+    -fx-background-color: rgba(42, 42, 42, 0.4);
+    -fx-background-radius: 7;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #404040;
+    -fx-background-radius: 7;
+    -fx-border-color: rgba(96, 96, 96, 0.3);
+    -fx-border-width: 1;
+    -fx-border-radius: 7;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #505050;
+}
+
+.scroll-bar .thumb:pressed {
+    -fx-background-color: #606060;
+}
+
+.scroll-bar .track {
+    -fx-background-color: rgba(31, 31, 31, 0.6);
+    -fx-background-radius: 7;
+    -fx-border-color: rgba(64, 64, 64, 0.2);
+    -fx-border-width: 1;
+    -fx-border-radius: 7;
+}
+
+.scroll-bar .track-background {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+    -fx-pref-width: 0;
+    -fx-pref-height: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-shape: null;
+}
+
+/* Animation and hover effects */
+.chart-container:hover {
+    -fx-background-color: linear-gradient(to bottom right, #2f2f2f 0%, #242424 100%);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 15, 0, 0, 5);
+    -fx-border-color: rgba(255,255,255,0.15);
+}
+
+/* BorderPane specific styling */
+.border-pane {
+    -fx-background-color: #1a1a1a;
+}
